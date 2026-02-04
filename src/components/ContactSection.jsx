@@ -53,7 +53,7 @@ export const ContactSection = () => {
           </div>
 
           <a
-            href="/Mohammed_Ashiq_CV.pdf"
+            href="/resume.pdf"
             download
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full
                        bg-primary text-primary-foreground font-medium"
@@ -69,48 +69,37 @@ export const ContactSection = () => {
 
 /* ================= CONTACT CARD ================= */
 
-const ContactCard = ({ icon, title, value, subText, href }) => (
+const ContactCard = ({ icon, title, value, href }) => (
   <a
     href={href}
     target="_blank"
     rel="noopener noreferrer"
     className="
-      block rounded-lg
+      relative
+      rounded-xl
       border border-border
-      px-4 py-5
+      px-6 py-5 pl-8
       transition
       hover:bg-secondary/40
-      card-hover
-      text-center
     "
   >
-    {/* ICON */}
-    <div className="
-      w-9 h-9 mx-auto mb-3
-      flex items-center justify-center
-      rounded-full
-      bg-primary/10 text-primary
-    ">
-      {icon}
+    {/* ACCENT */}
+    <span className="
+      absolute left-0 top-0 h-full w-1
+      rounded-l-xl
+      bg-primary
+    " />
+
+    <div className="flex items-center gap-4">
+      <div className="text-primary">{icon}</div>
+
+      <div>
+        <p className="text-sm font-medium">{title}</p>
+        <p className="text-xs text-muted-foreground">{value}</p>
+      </div>
     </div>
-
-    {/* TITLE */}
-    <p className="text-sm font-medium">
-      {title}
-    </p>
-
-    {/* MAIN TEXT */}
-    <p className="text-xs text-foreground mt-1">
-      {value}
-    </p>
-
-    {/* SUBTEXT */}
-    {subText && (
-      <p className="text-[11px] text-muted-foreground mt-1 break-all">
-        {subText}
-      </p>
-    )}
   </a>
 );
+
 
 

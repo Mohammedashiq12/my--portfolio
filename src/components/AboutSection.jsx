@@ -1,115 +1,124 @@
-import { Briefcase, Code, Cpu } from "lucide-react";
+import { Code, Cpu, Briefcase } from "lucide-react";
 
 export const AboutSection = () => {
   return (
-    <section id="about" className="py-28 px-4 relative">
-      <div className="container mx-auto max-w-6xl text-center">
+    <section id="about" className="py-32 px-4 relative">
+      <div className="container mx-auto max-w-6xl">
 
-        {/* SECTION TITLE */}
-        <div className="mb-16">
-          <h2 className="font-heading text-4xl md:text-5xl font-bold tracking-tight">
+        {/* TITLE */}
+        <div className="text-center mb-20">
+          <h2 className="font-heading text-4xl md:text-5xl font-bold">
             About <span className="text-primary">Me</span>
           </h2>
-        </div>
-
-        {/* MAIN CONTENT */}
-        <div className="max-w-3xl mx-auto space-y-8">
-
-          {/* STATEMENT */}
-          <h3 className="font-heading text-2xl md:text-3xl font-semibold leading-snug">
-            I build clean, scalable, and thoughtful digital experiences.
-          </h3>
-
-          {/* SHORT DESCRIPTION */}
-          <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-            I’m an AI/ML student with a strong interest in full-stack development.
-            I enjoy creating responsive, user-friendly web applications using
-            modern technologies, with a strong focus on clean code and usability.
+          <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
+            A quick snapshot of who I am and what I enjoy building.
           </p>
-
-          {/* CTA */}
-          <div className="pt-6 flex justify-center gap-4">
-            <a
-              href="#contact"
-              className="px-7 py-3 rounded-full bg-primary text-primary-foreground
-                         font-medium transition-all duration-300
-                         hover:shadow-[0_0_14px_rgba(139,92,246,0.5)]
-                         hover:scale-105 active:scale-95"
-            >
-              Contact Me
-            </a>
-
-            <a
-              href="/Mohammed_Ashiq_CV.pdf"
-              target="_blank"
-              className="px-7 py-3 rounded-full border border-primary text-primary
-                         font-medium transition-all duration-300
-                         hover:bg-primary/10"
-            >
-              View Resume
-            </a>
-          </div>
         </div>
 
-        {/* SKILL / ROLE CARDS */}
-        <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        {/* CONTENT */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
 
-          <InfoCard
-            icon={<Code className="h-5 w-5 text-primary" />}
-            title="Web Development"
-            text="Building responsive and accessible web applications using modern tools and frameworks."
-          />
+          {/* LEFT */}
+          <div className="space-y-6">
+            <h3 className="font-heading text-2xl md:text-3xl font-semibold leading-snug">
+              I design and build thoughtful digital systems.
+            </h3>
 
-          <InfoCard
-            icon={<UserIcon />}
-            title="UI / UX Design"
-            text="Designing clean, intuitive interfaces focused on clarity and usability."
-          />
+            <p className="text-muted-foreground leading-relaxed">
+              I’m an AI/ML student with a strong interest in full-stack development.
+              I enjoy building scalable, user-focused applications and experimenting
+              with intelligent systems that solve real problems.
+            </p>
 
-          <InfoCard
-            icon={<Cpu className="h-5 w-5 text-primary" />}
-            title="AI & Machine Learning"
-            text="Exploring machine learning concepts and experimenting with practical applications."
-          />
+            <p className="text-muted-foreground leading-relaxed">
+              I care deeply about clean code, good design, and systems that actually
+              help people.
+            </p>
 
-          <InfoCard
-            icon={<Briefcase className="h-5 w-5 text-primary" />}
-            title="Project Management"
-            text="Planning and delivering projects with a structured and thoughtful approach."
-          />
+            {/* CTA */}
+            <div className="flex gap-4 pt-4">
+              <a
+                href="#contact"
+                className="
+                  px-7 py-3 rounded-full
+                  bg-primary text-primary-foreground
+                  font-medium
+                  transition-all duration-300
+                  hover:scale-105 hover:shadow-lg
+                "
+              >
+                Contact Me
+              </a>
+
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  px-7 py-3 rounded-full
+                  border border-border
+                  font-medium
+                  transition
+                  hover:border-primary hover:text-primary
+                "
+              >
+                View Resume
+              </a>
+            </div>
+          </div>
+
+          {/* RIGHT – HIGHLIGHTS */}
+          <div className="grid grid-cols-1 gap-6">
+
+            <HighlightCard
+              icon={<Code className="h-5 w-5 text-primary" />}
+              title="Full-Stack Development"
+              text="Building responsive, accessible, and scalable web applications."
+            />
+
+            <HighlightCard
+              icon={<Cpu className="h-5 w-5 text-primary" />}
+              title="AI & Machine Learning"
+              text="Exploring intelligent systems and practical ML use-cases."
+            />
+
+            <HighlightCard
+              icon={<Briefcase className="h-5 w-5 text-primary" />}
+              title="Problem-Solving Mindset"
+              text="I enjoy breaking down complex ideas into structured solutions."
+            />
+          </div>
         </div>
       </div>
     </section>
   );
 };
 
-/* COMPACT CARD */
-const InfoCard = ({ icon, title, text }) => (
-  <div className="border border-border rounded-lg px-5 py-4">
-    <div className="flex items-start gap-4">
-      <div className="p-2 rounded-full bg-primary/10 shrink-0">
-        {icon}
-      </div>
-      <div className="text-left">
-        <h4 className="text-sm font-semibold mb-1">{title}</h4>
-        <p className="text-sm text-muted-foreground leading-snug">
-          {text}
-        </p>
-      </div>
+/* ================= HIGHLIGHT CARD ================= */
+
+const HighlightCard = ({ icon, title, text }) => (
+  <div
+    className="
+      flex gap-4 items-start
+      p-5 rounded-xl
+      border border-border
+      bg-card
+      transition-all duration-300
+      hover:-translate-y-1 hover:shadow-md
+      hover:border-primary/40
+    "
+  >
+    <div className="p-2 rounded-full bg-primary/10 shrink-0">
+      {icon}
+    </div>
+
+    <div>
+      <h4 className="text-sm font-semibold mb-1">
+        {title}
+      </h4>
+      <p className="text-sm text-muted-foreground leading-snug">
+        {text}
+      </p>
     </div>
   </div>
-);
-
-/* USER ICON */
-const UserIcon = () => (
-  <svg
-    className="h-5 w-5 text-primary"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    viewBox="0 0 24 24"
-  >
-    <path strokeLinecap="round" strokeLinejoin="round" d="M12 12a5 5 0 100-10 5 5 0 000 10z" />
-    <path strokeLinecap="round" strokeLinejoin="round" d="M20 21a8 8 0 10-16 0" />
-  </svg>
 );
