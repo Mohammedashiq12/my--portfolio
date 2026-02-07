@@ -7,18 +7,18 @@ const projects = [
     description:
       "Personal portfolio built with a clean, responsive layout to showcase projects and skills.",
     image: "/portfolio.png",
-    tech: "React · Tailwind CSS",
+    tech: "React|Tailwind CSS|JavaScript",
     demoUrl: "https://mohammedashiq.vercel.app/",
     githubUrl: "https://github.com/Mohammedashiq12/my--portfolio",
   },
   {
     id: 2,
     title: "Todo-App",
-    description: "More projects are currently under development.",
-    image: "/placeholder.png",
-    tech: "—",
+    description: "Built to strengthen JavaScript fundamentals before moving on to larger projects.",
+    image: "todo-app.png",
+    tech: "JavaScript",
     demoUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/Mohammedashiq12/todo-app",
   },
   {
     id: 3,
