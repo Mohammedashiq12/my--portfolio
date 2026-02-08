@@ -8,7 +8,7 @@ const projects = [
       "Personal portfolio built with a clean, responsive layout to showcase projects and skills.",
     image: "/portfolio.png",
     tech: "React · Tailwind CSS · JavaScript",
-    demoUrl: "https://mohammedashiq.vercel.app/",
+    demoUrl: "mashiq.vercel.app",
     githubUrl: "https://github.com/Mohammedashiq12/my--portfolio",
   },
   {
